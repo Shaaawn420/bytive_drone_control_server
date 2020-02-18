@@ -8,5 +8,8 @@
     "prettier": "^1.19.1",
     "serialport": "^8.0.6",
     "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "cli-interact": "^0.1.9"
   }
 }
