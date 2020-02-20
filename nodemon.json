@@ -1,0 +1,7 @@
+{
+  "env": {
+    "SERIAL_PORT": "/dev/ttyUSB0",
+    "SERIAL_BAUDRATE": 1111,
+    "WS_PORT": 4444
+  }
+}
