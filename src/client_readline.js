@@ -8,7 +8,8 @@ connection.onopen = ee => {
 	let run = true;
 	
 	while (run) {
-		connection.send("L,+,-,1025000");
+		connection.send("a");
+		connection.send("sweep");
 		run = ask();
 	}
 };

@@ -23,18 +23,23 @@ const wss = new WebSocket.Server({
 /**
  * SerialPort open event
  */
-port.on('open', () => {});
+port.on('open', () => {
+    port.write("S" + "\n");
+});
 
 /**
  * Websocket client connected event
  */
 wss.on("connection", ws => {
+    
     /**
      * Client message event
      */
     ws.on("message", message => {
         console.log(`${ws._socket.remoteAddress}: ${message}`);
         port.write(message + "\n");
+        // port.write("a" + "\n");
+        // port.write("sweep" + "\n");
     });
 
     /**
@@ -42,5 +47,7 @@ wss.on("connection", ws => {
      */
     ws.on("close", event => {
         console.log(`${ws._socket.remoteAddress}: disconnected`);
+        port.write("L,-,-,1025000" + "\n");
+        port.write("R,-,-,1025000" + "\n");
     });
 });

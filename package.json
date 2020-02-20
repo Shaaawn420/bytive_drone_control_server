@@ -1,7 +1,7 @@
 {
   "name": "Server",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/server.js",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
