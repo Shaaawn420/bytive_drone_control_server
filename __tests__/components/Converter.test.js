@@ -51,12 +51,12 @@ describe('Converter Test', () => {
 
     const expected = {
       left: `${types.left}|${getCorrectValue(values.left.x)}|${getCorrectValue(
-          values.left.y)}`,
+          values.left.y)}!`,
       right: `${types.right}|${getCorrectValue(
           values.right.x)}|${getCorrectValue(
-          values.right.y)}`,
-      start: `${types.start}`,
-      stop: `${types.stop}`,
+          values.right.y)}!`,
+      start: `${types.start}!`,
+      stop: `${types.stop}!`,
     };
 
     expect(converter.buildResponse('left', values.left.x, values.left.y)).

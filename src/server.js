@@ -13,7 +13,6 @@ const port = new SerialPort(SERIAL_PORT, {baudRate: SERIAL_BAUDRATE});
 
 /**
  * Converter instance
- * @type {Converter}
  */
 const converter = new Converter();
 
@@ -50,7 +49,7 @@ wss.on('connection', ws => {
         payload.x ? payload.x / 100 : null,
         payload.y ? payload.y / 100 : null) + '\n';
     console.log(converted);
-    port.write(converter.buildResponse(converted) + '\n');
+    port.write(converted);
   });
 
   /**
