@@ -1,3 +1,5 @@
+const chmod = require('chmod');
+
 const WebSocket = require('ws');
 const SerialPort = require('serialport');
 const Converter = require('./components/Converter');
@@ -5,6 +7,11 @@ const Converter = require('./components/Converter');
 const SERIAL_PORT = process.env.SERIAL_PORT || '/dev/ttyUSB0';
 const SERIAL_BAUDRATE = parseInt(process.env.SERIAL_BAUDRATE) || 57600;
 const WS_PORT = parseInt(process.env.WS_PORT) || 65535;
+
+/**
+ * Make the serial port accessible
+ */
+chmod(SERIAL_PORT, 777);
 
 /**
  * SerialPort instance
